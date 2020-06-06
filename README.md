@@ -1,2 +1,10 @@
 # pyInfoCrawler
 Paraguay Information Crawler
+
+## Setup Development Env
+```bash
+$ py3 -m venv venv
+$ source ./venv/bin/activate
+$ pip install wheel
+$ pip install -r requirements.txt
+```
