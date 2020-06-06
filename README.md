@@ -1,0 +1,2 @@
+# pyInfoCrawler
+Paraguay Information Crawler
