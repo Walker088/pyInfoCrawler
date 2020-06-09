@@ -8,7 +8,15 @@
 import scrapy
 
 
-class CrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class InfocasaItem(scrapy.Item):
+    propertyId       = scrapy.Field()
+    propertyName     = scrapy.Field()
+    propertyLocation = scrapy.Field()
+    propertyPrice    = scrapy.Field()
+    corruncyName     = scrapy.Field()
+    numberOfRoom     = scrapy.Field()
+    numberOfBath     = scrapy.Field()
+    propertyType     = scrapy.Field()
+    propertyState    = scrapy.Field()
+    buildYear        = scrapy.Field()
+    squareMeter      = scrapy.Field()
