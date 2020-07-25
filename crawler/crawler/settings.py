@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import yaml
 
 # Scrapy settings for crawler project
 #
@@ -27,7 +28,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -88,3 +89,21 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# Configure Postgres Connection
+class PgConfig():
+    def __init__(self):
+        with open('crawler/config.yml', 'r') as f:
+            config = yaml.safe_load(f)
+        if None != config:
+            self.db_config = config.get('postgres')
+    def get_host(self) -> str:
+        return self.db_config.get('DB_HOST')
+    def get_db(self) -> str:
+        return self.db_config.get('DB_NAME')
+    def get_port(self) -> str:
+        return self.db_config.get('DB_PORT')
+    def get_user(self) -> str:
+        return self.db_config.get('DB_USER')
+    def get_pass(self) -> str:
+        return self.db_config.get('DB_PASS')
