@@ -1,3 +1,8 @@
+# Config files
+docker-compose.yml
+flyway.conf
+config.yml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
